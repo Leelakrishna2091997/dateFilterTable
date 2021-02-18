@@ -1,0 +1,16 @@
+  <div class='filters'>
+    <mat-form-field appearance="fill">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" [formControl] = 'startDate' (dateChange)="addEvent()">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>  
+  
+    <mat-form-field class="inputAlignment ipProperties" appearance="fill">
+      <mat-label>Revision:</mat-label>
+      <mat-select [formControl]="revisionId">
+          <mat-option value="eachRevisionId" *ngFor='let eachRevisionId of v[2]'>{{eachRevisionId}}</mat-option>
+      </mat-select>
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="getResults();" type="submit">Submit</button>  
+  </div>
